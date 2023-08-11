@@ -1,5 +1,7 @@
 # vue-tianditu
 
+> fork 主要是解决 vue2.7 的兼容性问题，发布到 npm 是因为简单尝试了下 patch-package 似乎并不能给 package.json 打补丁。
+
 - 天地图 vue 组件库
 
 - vue-tianditu v2 同时支持 Vue3 和 Vue2(composition-api)
@@ -9,9 +11,9 @@
 ## 安装
 
 ```sh
-npm i vue-tianditu
+npm i @zjjw/vue-tianditu
 # or
-yarn add vue-tianditu
+yarn add @zjjw/vue-tianditu
 ```
 
 ## 快速上手
@@ -24,7 +26,7 @@ yarn add vue-tianditu
 // main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
-import VueTianditu from "vue-tianditu";
+import VueTianditu from "@zjjw/vue-tianditu";
 
 const app = createApp(App);
 app.use(VueTianditu, {
@@ -44,7 +46,7 @@ app.mount("#app");
 
 <script lang="ts" setup>
   import { reactive } from "vue";
-  import { TdtMap } from "vue-tianditu";
+  import { TdtMap } from "@zjjw/vue-tianditu";
   const state = reactive({
     center: [113.280637, 23.125178],
     zoom: 12
@@ -74,7 +76,7 @@ app.mount("#app");
 
 <script lang="ts" setup>
   import { reactive } from "vue";
-  import { TdtMap } from "vue-tianditu";
+  import { TdtMap } from "@zjjw/vue-tianditu";
   const loadConfig = { v: "4.0", tk: "your map token" };
   const state = reactive({
     center: [113.280637, 23.125178],
@@ -95,7 +97,7 @@ app.mount("#app");
 甚至可以把它当作无情的 API 加载工具
 
 ```ts
-import { useApiLoader } from "vue-tianditu";
+import { useApiLoader } from "@zjjw/vue-tianditu";
 
 useApiLoader({
   v: "4.0",
@@ -109,7 +111,7 @@ useApiLoader({
 ## 辅助函数
 
 ```ts
-import { toLngLat, toBounds, toPoint, toIcon } from "vue-tianditu";
+import { toLngLat, toBounds, toPoint, toIcon } from "@zjjw/vue-tianditu";
 ```
 
 ### 说明
@@ -132,7 +134,7 @@ import { toLngLat, toBounds, toPoint, toIcon } from "vue-tianditu";
 </template>
 
 <script>
-import { useApiLoader } from "vue-tianditu";
+import { useApiLoader } from "@zjjw/vue-tianditu";
 // 加载API
 useApiLoader({
   v: "4.0",
