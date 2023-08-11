@@ -1,6 +1,6 @@
 # vue-tianditu
 
-> fork 主要是解决 vue2.7 的兼容性问题，发布到 npm 是因为简单尝试了下 patch-package 似乎并不能给 package.json 打补丁。
+> fork 主要是作者很久没更新了，我需要解决 vue2.7 的兼容性问题，发布到 npm 是因为简单尝试了下 patch-package 似乎并不能给 package.json 打补丁。
 
 - 天地图 vue 组件库
 
