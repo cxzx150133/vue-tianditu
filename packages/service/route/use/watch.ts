@@ -1,6 +1,7 @@
 import { watch } from "vue-demi";
 import { RouteState } from "../types";
 import { toLngLat, toLngLats } from "../../../utils";
+import { toLonLatNumberArray } from "~/utils";
 
 export function useWatch(state: RouteState) {
   function resetRoutes() {
@@ -82,9 +83,7 @@ export function useWatch(state: RouteState) {
             .filter(e => e)
             .map(e => e.split(",").map(Number))
         );
-        const markers = [segment.stationStart, segment.stationEnd].map(station =>
-          station.lonlat.split(",").map(Number)
-        );
+        const markers = [segment.stationStart, segment.stationEnd].map(station => toLonLatNumberArray(station.lonlat));
         switch (segment.segmentType) {
           case 1:
           case 4:

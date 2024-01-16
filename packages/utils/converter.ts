@@ -81,3 +81,18 @@ export const toMarker = (option: MarkerProps) => {
   marker.extData = option.extData;
   return marker;
 };
+
+/**
+ * 转换 LonLat String 为 LonLat Number Array(抽离出来用于统一兼容，疑似原格式 "xxx.xx xxx.xx"，新格式 "xxx.xx,xxx.xx")
+ * @param lonlat LonLat String
+ * @returns LonLat Number Array
+ */
+export const toLonLatNumberArray = (lonlat: string) => {
+  if (lonlat.includes(" ")) {
+    return lonlat.split(" ").map(Number);
+  } else if (lonlat.includes(",")) {
+    return lonlat.split(",").map(Number);
+  }
+
+  throw new Error("unknown lonlat format: " + lonlat);
+};

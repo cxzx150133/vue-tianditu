@@ -2,6 +2,7 @@ import { defineComponent, computed, watch, onBeforeMount, PropType } from "vue-d
 import { TdtMarker, TdtInfowindow } from "../../../components";
 import { toLngLats, h } from "../../../utils";
 import { useMapRoot } from "../../../use";
+import { toLonLatNumberArray } from "~/utils";
 
 export const SearchMapView = defineComponent({
   props: {
@@ -21,7 +22,7 @@ export const SearchMapView = defineComponent({
     const markers = computed(() => {
       return props.pois.map(poi => {
         return {
-          position: poi.lonlat.split(" ").map(Number),
+          position: toLonLatNumberArray(poi.lonlat),
           extData: poi
         };
       });
