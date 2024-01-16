@@ -1,4 +1,4 @@
-import { toLngLat, debounce } from "../../../utils";
+import { toLngLat, debounce, toLonLatNumberArray } from "../../../utils";
 import { PageProps } from "../components";
 import { SearchState } from "../types";
 
@@ -35,7 +35,7 @@ export function useMethods(state: SearchState, emit: any) {
   }
 
   function onPoiClick(poi: T.LocalSearchPoi) {
-    const position = poi.lonlat.split(" ").map(Number);
+    const position = toLonLatNumberArray(poi.lonlat);
     state.tdtMap?.panTo(toLngLat(position));
     state.target = position;
     state.content = `
