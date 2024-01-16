@@ -1,10 +1,13 @@
 {
   "name": "@zjjw/vue-tianditu",
-  "version": "2.7.7",
+  "version": "2.7.8",
   "description": "vue-tianditu",
   "author": "SoulLyoko <519052532@qq.com>",
-  "repository": "https://github.com/SoulLyoko/vue-tianditu.git",
-  "homepage": "https://github.com/SoulLyoko/vue-tianditu#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjjw-front-end/vue-tianditu.git"
+  },
+  "homepage": "https://github.com/zjjw-front-end/vue-tianditu#readme",
   "private": false,
   "license": "MIT",
   "main": "lib/vue-tianditu.umd.js",
