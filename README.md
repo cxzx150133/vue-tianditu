@@ -72,7 +72,7 @@ app.mount("#app");
 ```html
 <template>
   <div class="mapDiv">
-    <tdt-map :center="state.center" :zoom="state.zoom" :loadConfig="loadScript"></tdt-map>
+    <tdt-map :center="state.center" :zoom="state.zoom" :loadConfig="loadConfig"></tdt-map>
   </div>
 </template>
 
